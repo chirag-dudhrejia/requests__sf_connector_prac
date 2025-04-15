@@ -1,0 +1,4 @@
+snowflake-connector-python
+pandas
+pyarrow<19.0.0
+toml
