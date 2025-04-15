@@ -5,6 +5,7 @@ import pandas as pd
 import requests
 import json
 import traceback
+import toml
 
 connections_file = toml.load('connections.toml')
 conn_params = connections_file['fakestoredata']
@@ -17,6 +18,9 @@ user_data_df = pd.DataFrame(res_json)
 
 
 print(user_data_df)
+
+config_file = toml.load("connections.toml")
+conn_params = config_file["fakestoredata"]
 
 conn = sf.connect(
     user=conn_params['user'],
